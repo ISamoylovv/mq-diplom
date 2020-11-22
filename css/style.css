@@ -26,15 +26,6 @@ body {
   color: #000000;
 }
 
-.container-for-all {
-  position: relative;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1170px;
-}
-
 .links {
   text-decoration: none;
   color: inherit;
@@ -53,6 +44,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   height: 100vh;
   z-index: 3;
+  display: none;
 }
 
 .popup-container {
@@ -192,7 +184,7 @@ body {
 }
 
 .logo {
-  width: 60%;
+  width: 15%;
   display: block;
 }
 
@@ -201,7 +193,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  margin-top: 140px;
+  padding-top: 140px;
   text-align: center;
 }
 
@@ -260,6 +252,7 @@ body {
   width: 25%;
   box-sizing: border-box;
   margin-right: 5px;
+  flex-grow: 1;
 }
 
 .trend-post::before {
@@ -503,9 +496,9 @@ body {
 .search-button {
   background-image: url("../svg/search.svg");
   background-repeat: no-repeat;
-  background-position: left 15px center;
+  background-position: left 17px center;
   background-size: 18px;
-  width: 18%;
+  width: 50px;
 }
 
 .email {
@@ -608,7 +601,7 @@ body {
   position: absolute;
   top: 170px;
   left: -20px;
-  bottom: -25px;
+  bottom: -20px;
   right: -20px;
   border: 3px solid rgba(181, 159, 91, 0.6);
 }
@@ -647,10 +640,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
+  justify-content: space-between;
 }
 
 .price {
-  width: 55%;
   font-weight: 700;
   line-height: 24px;
 }
@@ -676,8 +669,9 @@ body {
   color: #ffffff;
   border: 0;
   outline: 0;
-  padding: 19px 30px;
+  padding: 20px 25px;
   cursor: pointer;
+  flex: none;
 }
 
 .product-button:hover {
@@ -743,4 +737,190 @@ body {
 
 .social-item:nth-child(n + 2) {
   margin-left: 30px;
+}
+
+@media (max-width: 640px) {
+  .popup-container {
+    width: 70%;
+  }
+
+  .header {
+    height: 100vh;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+
+  .logo {
+    width: 70%;
+    padding-top: 225px;
+  }
+
+  .title-welcome {
+    padding-top: 45px;
+    width: 70%;
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .trend-posts {
+    display: block;
+  }
+
+  .trend-post {
+    width: 100%;
+    margin-bottom: 3px;
+    flex-grow: 1;
+  }
+
+  .container-for-all {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .main,
+  .product-posts {
+    display: block;
+  }
+
+  .post-list {
+    width: 100%;
+  }
+
+  .post,
+  .post:nth-child(n + 2),
+  .post:last-child {
+    display: block;
+    margin-bottom: 45px;
+  }
+
+  .post-image {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .post-content {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .product-post {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 641px) {
+  .container-for-all {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1200px) {
+  .container-for-all {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .header {
+    padding-top: 60px;
+  }
+
+  .logo {
+    width: 25%;
+  }
+
+  .title-welcome {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 55px;
+  }
+
+  .trend-posts {
+    flex-wrap: wrap;
+  }
+
+  .trend-post {
+    width: 49.333%;
+    margin-right: 0;
+    margin-bottom: 3px;
+    flex-grow: 1;
+  }
+
+  .trend-post:nth-child(even) {
+    margin-left: 3px;
+  }
+
+  .trend-title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .post-list {
+    width: 55%;
+  }
+
+  .post {
+    flex-wrap: wrap;
+    border-bottom: 3px solid #eeeeee;
+  }
+
+  .post:last-child {
+    border-bottom: 0;
+  }
+
+  .post-image {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .post-content {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 40%;
+  }
+
+  .product-posts {
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+  }
+
+  .product-post {
+    width: 46.333%;
+    margin-bottom: 50px;
+    margin-right: 0;
+  }
+
+  .product-title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .menu-list {
+    display: none;
+  }
 }
