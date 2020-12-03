@@ -36,6 +36,7 @@ body {
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
+  display: none;
 }
 
 .popup {
@@ -112,7 +113,7 @@ body {
   margin-right: 5px;
 }
 
-.radio:checked ~ .radio-text::before {
+.radio:checked~.radio-text::before {
   background-image: url("../svg/form-circle.svg");
 }
 
@@ -164,6 +165,31 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.toggle {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.toggle-line {
+  display: block;
+  margin-bottom: 5px;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.toggle-line:last-child {
+  margin-bottom: 0;
 }
 
 .menu-list {
@@ -575,7 +601,6 @@ body {
 
 .products {
   margin-top: 65px;
-  margin-bottom: 95px;
 }
 
 .product-posts {
@@ -587,12 +612,14 @@ body {
 
 .product-post {
   width: 27%;
-  margin-right: 106px;
+  margin-right: 5%;
+  margin-bottom: 95px;
   position: relative;
   box-sizing: border-box;
+  flex-grow: 1;
 }
 
-.product-post:last-child {
+.product-post:nth-child(3n + 3) {
   margin-right: 0;
 }
 
@@ -700,6 +727,8 @@ body {
   font-style: normal;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .social-link {
@@ -750,6 +779,10 @@ body {
 
   .menu {
     justify-content: center;
+  }
+
+  .toggle {
+    top: 30px;
   }
 
   .logo {
@@ -846,7 +879,7 @@ body {
   }
 
   .title-welcome {
-    width: 90%;
+    width: 85%;
   }
 
   .title {
@@ -911,6 +944,7 @@ body {
     width: 46.333%;
     margin-bottom: 50px;
     margin-right: 0;
+    flex-grow: 0;
   }
 
   .product-title {
@@ -922,5 +956,9 @@ body {
 @media (max-width: 1200px) {
   .menu-list {
     display: none;
+  }
+
+  .toggle {
+    display: block;
   }
 }
